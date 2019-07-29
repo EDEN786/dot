@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [ -f ~/.dir_colors ]; then
+	eval `dircolors ~/.dir_colors`
+	LS_COLORS=$LS_COLORS:'ow=1;4;93'; export LS_COLORS
+fi
+
+cd ~
+
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias bashrc="vim ~/.bashrc"
+alias vimrc='vim ~/.vimrc'
+alias fvim='vim $(ls |fzf)'
+
+alias alrc='vim ~/CONFIG/.shared'
+alias alconfig='alrc'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias l1='ls -1'
+#alias ls='ls -F'
+#alias la='ls -a'
+#alias l.='ls .*'
+alias vrc=$EDITOR ~/.vimrc
+cs()
+{
+	cd $@
+	ls
+}
+
+alias cds='cs'
