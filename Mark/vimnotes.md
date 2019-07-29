@@ -144,3 +144,7 @@ set statusline=
             \:%{&readonly\|\|!&modifiable?&modified?'%*':'%%':&modified?'**':'--'}
             \\ \ %{expand('%:~:.')!=#''?expand('%:~:.'):'[No\ Name]'}
             \%=\ %3p%%\ \ %l:\ %3c
+
+
+#Vim Free keys
+
