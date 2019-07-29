@@ -1,0 +1,1 @@
+cat out | sed -e 's/.*WARN.*/[7m&[0m/i' -e 's/.*bERR*/[93;41m&[0m/i' 
