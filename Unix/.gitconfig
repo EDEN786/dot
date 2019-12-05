@@ -1,3 +1,13 @@
 [user]
 	email = adnaan@live.com
-	name = adnaan hussain
+	name = Adnaan Hussain
+[core]
+	editor = vim
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s%Cgreen(%cr) %C(bold black)<%an>%Creset' --abbrev-commit
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
