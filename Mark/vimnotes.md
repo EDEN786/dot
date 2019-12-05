@@ -1,3 +1,5 @@
+   see smooth scroll -- animates scrolling
+https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
 #Plugins
 via Vundle | Vimplug
 -----------|---------
@@ -42,28 +44,41 @@ FileExplorer | NerdTree
 
 			set rtp+={repository_root}/powerline/bindings/vim
 			```
-
+////////////////////////////////////////
+				VIM
+////////////////////////////////////////
 ""notes"" : actions are triggerd by lowercase, Uppercase, _ALT_+letter and _CTRL_+leter
 if it is lowercase, just press the letter
 if it is uppercase, use _SHIFT_, _CapsLock_ will also work.
 	CTRL+letter, may be depicted as ^letter
+difference between word and WORD.
+	word is delimited by non-keyword chars
+	WORD is delimited by whitespace
+	if a command has a lower case, and then a uppercase next to it. The upper case version is for WORDs
+		i.e _w_ _W_ , w is for word, W is for WORD.
+		after a command ¦ is the opposite command
+		
+
+_wd_ word
+_WD_ WORD
+_Ln_ line
+_CUR_ - cursor
+_So#_ Start of 
+_Eo#_ End of 
 
 #Modes
 [N] Normal - _<ESC>_ to access. _<Ctrl-O>_ to access for one command.
 			- _n_
-			
+			- commands work differently in insert mode than in normal mode.
 [I] Insert 
-	   - _i_ to access at cursor Position.
-	   - _A_ to access at End of Line.
-	   - _a_ to access at end of Word.
-	   - _O_ New line, above (newline).
-	   - _o_ to access at Next line (newline).
+	   - (insert)_i_ edit before _CUR_. ¦ (after)_a_ after _CUR_
+	   	   - _I_ edit at _SoL_. ¦ _A_ after _EoL_
+	   - _o_ newline below and start edit. ¦ _O_ above
 
 [V] Visual
 		- _v_ VISUAL.
 		- _V_ V-line.
 		- _<Ctrl-v>_ V-Block.
-
 #inputs
 "note, ":" signifies a command. commands are usually inputted in the [Normal] Mode.
 ##Exit
@@ -74,17 +89,60 @@ if it is uppercase, use _SHIFT_, _CapsLock_ will also work.
 	Write and Quit - __:wq__ or __:x__ or _ZZ_
 ##Navigation
 	_h,j,k,l_ - Navigation, Left, UP, Down, Right.
-	_w_ : _moves_ to _beginning_ of the _next word_.
-	_e_ : _moves_ to the _last letter_ of current/next _word_
-	_ng_ or _:n_ : _moves_ cursor to specified (n) line.
+	(word)_w_ _W_ : _Mv_ to _So_ _Next wd_. | (back)_b_ _B_ : _So_ _Prev wd_
+	(end)_e_ : _moves_ to _Eo_ current/next _word_ | (gotoEnd)_ge_ : _Eo_ _Prev wd_
+	_*n*G_ or _:*n*_ : _moves_ cursor to specified (n) line.
 
-	_<Ctrl-F>_
-	_<Ctrl-B>_
-	C_E
+	_0_ - _Mv_ to first _Char_ of _Ln_ | _$_ - _Mv_ to last _Char_ of _Ln_
+		^ - first NonBlank | g_ - last NonBlank
+	_,_ - repeat last movment
+	_._ - repeat last action
+	
+###Marks
+	_m"_ - create mark
+		_'_" - jump to line of mark "
+		_`_" - jump to location of mark "
+	_``_ - return to place before jump
+		
+	(findforward)_f*?*_ _Mv_ _CUR_ to *?* Forward ¦ (findback)_F*?*_ Backwords
+	(tillfoward) _t*?*_ _Mv_ _CUR_ upto *?* Forward ¦ (tillback) _T*?*_ 
+	_*_ _Next_ occurence of _word_ under _CUR_ ¦ _#_ _Prev_
+	
+	_;_ - repeat find in same direction ¦ , repeat find in opposite direction
+		
+###Patterns
+	/ - forward ¦ ? - back
+	% - whole document
+	<,> - range
+	g - apply to all occurences per line (default applies to first occurence on line, ignores rest)
+	
+	action - subsitute   /%/old/new/g
+	:g/ptrn/<ac> - apply action to lines matching pattern (d delete)
+	:/v/ptrn/<ac> - apply action to lines NOT matching pattern || :/g!/ptrn/<ac> - same thing
+	
+	
+##Screen Movement
+	_<Ctrl-E>_ : _scroll down line_ ¦ _<Ctrl-Y>_ up
+		(down)_<Ctrl-D>_ : _scroll down half _Screen_ + _Mv_ _CUR_ ¦ (up)_<Ctrl-U>_  up
+			(forward)_<Ctrl-F>_ : _scroll down full _Screen_ + _Mv_ _CUR_ ¦ (back)_<Ctrl-B>_  up
+	(high)	_H_ - _Mv_ to top of _Screen_
+	(mediam)_M_ - _Mv_ to middle of _Screen_
+	(low)	_L_ - _Mv_ to bottom of _Screen_
+	
+	_zz_ - Center _CUR_ to middle of _Screen_
+
+
+Jump
+gg - jump to line 0
+G - jump to last line
+C-] - jump to Tag
+C-T - return from Tag jump
+C-O - return from jump
+
 
 ##Commands
 	:tee - T shaped Pipe, writes to file (buffer) and to STDOUT.
-	:Tabuliza @see tabulize
+	:Tabulize @see tabulize
 
 #Record a Macro
 <N> q<buffer>
@@ -95,8 +153,9 @@ if it is uppercase, use _SHIFT_, _CapsLock_ will also work.
 			,then press __q__
 ##Macro values
 	<CR> - New Line (windows ? CR LF - unix)
-	<C-R> - input at cursor?
-	<esc> - Escape (to [normal] mode
+	<C-R> - input at cursor? register?
+	<C-R> - word? current word?
+	<ESC> - Escape (to [normal] mode)
 	<BS> - Back Space
 
 #Windows
@@ -117,8 +176,8 @@ __:tabp__ - Previous Tab _Gt_
 _K_ - looks up man page for word cursor is over.
 ###Ex mode
 	Ex-Mode is backwords support for Ex commands
-	:Visual	Visaual opens a file
-	:Open	Open (n) opens a file at line n
+	:Visual	Visual opens a file
+	:Open	Open(n) opens a file at line n
 	:Edit is implemented the same as visual.
 :edit/:e supports tab completion
 :open/:o does not. - open uses pattern matching.

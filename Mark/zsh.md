@@ -127,49 +127,13 @@ alias cds='cs'
 
 
 
+##::VIM::CONFIG#####################
 
-
-
-
-
-
-##::VIM::##################################
-'''Vimrc
-NORMAL MODE <N> : <ESC>
-	VISUAL MODE <V> : v :visual
-					  V :-line 
-					  Ctrl-v :-block
-	INSERT MODE <I> : i
-h :LEFT
-j :DOWN
-k :UP
-l :RIGHT
-	
-Windows
-:split
-:vsplit
-	navigate with Ctrl-W <Arrows_hjkl>
-	
-"macros
-start recording with <N>q. then buffer
-end recording with <N>q.
-
-Shortcuts
-<INSERT>
-Ctrl-O :: execute one <N>Mode command then return to <I>Mode
-	
 set nu //linenumbers
 set hlsearch //highlighsearch
 set lazyredraw //only refresh at the end of a macro
 "mappings
 nnoremap Q @@ "disable ^Q key <Ex>Mode
-
-Jump
-gg - jump to line 0
-G - jump to last line
-C-] - jump to Tag
-C-T - return from Tag jump
-C-O - return from jump
 
 Speical Characters
 	C-K then two-letter combination

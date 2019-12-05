@@ -1,4 +1,6 @@
 WSL:
+#Enable WSL
+	
 #Chocolatey
 (Admin_PowerSh) 
 	>$ Get-ExecutionPolicy; If (Restricted) run >$ Set-ExecutionPolicy Bypass -Scope Process -Force;
@@ -90,7 +92,7 @@ WSL:
 	//can ignore
 	LEFTCODE RIGHTCODE ENDCODE/ 
 	
-https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
 
+????????????????????
 
 rdesktop -A
