@@ -19,7 +19,7 @@ set noshowmode "hide --INSERT--
 		"let &t_8f = [38;2;%lu;%lu;%lum
 		"let &t_8b = [48;2;%lu;%lu;%lum
 
-set rtp+=~/.fzfz
+"set rtp+=~/.fzfz
 "filetype shit	
 command! -nargs=+ Cppman silent! call system("tmux split-window cppman " . expand(<q-args>))
 autocmd FileType cpp nnoremap <silent><buffer> K <Esc>:Cppman <cword><CR>

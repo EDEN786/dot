@@ -1,1 +1,1 @@
-apt update && apt -y upgrade && apt autoremove && autoclean 
+apt update && apt -y upgrade && apt autoremove && apt autoclean 
