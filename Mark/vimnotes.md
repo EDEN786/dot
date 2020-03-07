@@ -1,6 +1,6 @@
    see smooth scroll -- animates scrolling
 https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
-# lugins
+# Plugins
 via Vundle | Vimplug
 -----------|---------
 tpope/vim-fugitive
@@ -61,6 +61,7 @@ difference between word and WORD.
 		i.e _w_ _W_ , w is for word, W is for WORD.
 		after a command ¦ is the opposite command
 		
+	
 
 _wd_ word
 _WD_ WORD
@@ -69,7 +70,7 @@ _CUR_ - cursor
 _So#_ Start of 
 _Eo#_ End of 
 
-# odes
+# Modes
 [N] Normal - _<ESC>_ to access. _<Ctrl-O>_ to access for one command.
 			- _n_
 			- commands work differently in insert mode than in normal mode.
@@ -82,15 +83,18 @@ _Eo#_ End of
 		- _v_ VISUAL.
 		- _V_ V-line.
 		- _<Ctrl-v>_ V-Block.
-# nputs
+	
+# Inputs
 "note, ":" signifies a command. commands are usually inputted in the [Normal] Mode.
-## xit
-	Force Quit/Exit - __:q!__
+
+## Exit
+	Force Quit/Exit - __:q!__ or __ZC__
 	Quit - __:q__ (gives warnings)
 	Save - __:w__
 		Save as Sudo - __:w !sudo tee%__
 	Write and Quit - __:wq__ or __:x__ or _ZZ_
-## avigation
+	
+## Navigation
 	_h,j,k,l_ - Navigation, Left, UP, Down, Right.
 	(word)_w_ _W_ : _Mv_ to _So_ _Next wd_. | (back)_b_ _B_ : _So_ _Prev wd_
 	(end)_e_ : _moves_ to _Eo_ current/next _word_ | (gotoEnd)_ge_ : _Eo_ _Prev wd_
@@ -101,7 +105,7 @@ _Eo#_ End of
 	_,_ - repeat last movment
 	_._ - repeat last action
 	
-### arks
+### Marks
 	_m"_ - create mark
 		_'_" - jump to line of mark "
 		_`_" - jump to location of mark "
@@ -113,7 +117,7 @@ _Eo#_ End of
 	
 	_;_ - repeat find in same direction ¦ , repeat find in opposite direction
 		
-### atterns
+### Patterns
 	/ - forward ¦ ? - back
 	% - whole document
 	<,> - range
@@ -123,8 +127,7 @@ _Eo#_ End of
 	:g/ptrn/<ac> - apply action to lines matching pattern (d delete)
 	:/v/ptrn/<ac> - apply action to lines NOT matching pattern || :/g!/ptrn/<ac> - same thing
 	
-	
-## creen Movement
+## Screen Movement
 	_<Ctrl-E>_ : _scroll down line_ ¦ _<Ctrl-Y>_ up
 		(down)_<Ctrl-D>_ : _scroll down half _Screen_ + _Mv_ _CUR_ ¦ (up)_<Ctrl-U>_  up
 			(forward)_<Ctrl-F>_ : _scroll down full _Screen_ + _Mv_ _CUR_ ¦ (back)_<Ctrl-B>_  up
@@ -135,7 +138,7 @@ _Eo#_ End of
 	_zz_ - Center _CUR_ to middle of _Screen_
 
 
-Jump
+### Jump
 gg - jump to line 0
 G - jump to last line
 C-] - jump to Tag
@@ -143,41 +146,42 @@ C-T - return from Tag jump
 C-O - return from jump
 
 
-## ommands
+## Commands
 	:tee - T shaped Pipe, writes to file (buffer) and to STDOUT.
 	:Tabulize @see tabulize
 
-# ecord a Macro
+# Record a Macro
 <N> q<buffer>
 	//starts recording
 	//to end press __q__ again in [_Normal_] Mode.
 	//if you want to end in [_Insert_]  mode, press,
 		<Ctrl-O> to execute the next command in <N>
 			,then press __q__
-## acro values
+## Macro values	
 	<CR> - New Line (windows ? CR LF - unix)
 	<C-R> - input at cursor? register?
 	<C-R> - word? current word?
 	<ESC> - Escape (to [normal] mode)
 	<BS> - Back Space
 
-# indows
-## plit View
+# Windows
+## Split View
 vim -v
 __:split__ - horizontally ---
 __:vsplit__ - vertically |
 
-## abs
+## Tabs
 __:tabe__ - tab edit : open file to edit
 __:tabo__ - tab open : open file
 
 __:tabn__ - Next Tab or _gt_
 __:tabp__ - Previous Tab _Gt_
 
-# xtra
-## earning
+# Extra
+## Learning
 _K_ - looks up man page for word cursor is over.
-### x mode
+
+### Ex mode
 	Ex-Mode is backwords support for Ex commands
 	:Visual	Visual opens a file
 	:Open	Open(n) opens a file at line n
@@ -185,9 +189,7 @@ _K_ - looks up man page for word cursor is over.
 :edit/:e supports tab completion
 :open/:o does not. - open uses pattern matching.
 
-
-
-/// look into
+#### look into
 let g:currentmode={
             \ 'n'      : 'NORMAL  ',
             \ 'v'      : 'VISUAL  ',
@@ -208,5 +210,5 @@ set statusline=
             \%=\ %3p%%\ \ %l:\ %3c
 
 
-# im Free keys
+# Vim Free keys
 
