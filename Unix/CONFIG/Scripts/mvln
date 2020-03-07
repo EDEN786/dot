@@ -1,0 +1,26 @@
+#!/bin/sh
+# Moves file[s] to a Target directory
+# Create symlink from Original file location, to new file location
+# Can handle multiple files.  Last Argument MUST be target directory
+# Credit https://unix.stackexchange.com/questions/228015/move-a-file-and-replace-it-by-a-symlink
+while [ $# -gt 1 ]; do
+  eval "target=\${$#}"
+  original="$1"
+  if [ -d "$target" ]; then
+    target="$target/${original##*/}"
+  else
+    "Command requires a File and Target to operate"
+    exit -1
+  fi
+  mv -- "$original" "$target"
+  echo moving $original to $target
+  case "$original" in
+    */*)
+      case "$target" in
+        /*) :;;
+        *) target="$(cd -- "$(dirname -- "$target")" && pwd)/${target##*/}"
+      esac
+  esac
+  ln -s -d  -- "$target" "$original"
+  shift
+done

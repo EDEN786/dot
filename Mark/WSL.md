@@ -1,7 +1,9 @@
 WSL:
-#Enable WSL
+# Enable WSL
 	
-#Chocolatey
+# Chocolatey
+
+<pre>
 (Admin_PowerSh) 
 	>$ Get-ExecutionPolicy; If (Restricted) run >$ Set-ExecutionPolicy Bypass -Scope Process -Force;
   >$ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -10,8 +12,11 @@ WSL:
 	NppPluginManager
 		notepadplusplus-nppPluginManager
 				https://github.com/notepad-plus-plus/notepad-plus-plus/issues/2287#issuecomment-256638098
-					
-#Terminal
+</pre>					
+
+# Termiinal
+
+</pre>
 	https://medium.com/@ssharizal/hyper-js-oh-my-zsh-as-ubuntu-on-windows-wsl-terminal-8bf577cdbd97
 	Hyper: 'Ctrl+,' for settings
 	
@@ -21,15 +26,21 @@ WSL:
 	Instal Powerline Fonts for win10
 		https://medium.com/@slmeng/how-to-install-powerline-fonts-in-windows-b2eedecace58
 	(run though zsh & oh-my-zsh install)
+</pre>
 
-#GUI
+# GUIi
+
+</pre>
 	export DISPLAY=:0.0
 		[host]:<display>.[screen]
 		[local]:0.[0] // [optional]
 	sudo apt install xfce4
 	startxfce4
+</pre>
 
-#Folder Color fix
+# Folder Color fix
+
+<pre>
 	http://www.bigsoft.co.uk/blog/2008/04/11/configuring-ls_colors
 	LS_COLORS=$LS_COLORS:'ow=4;93'; export LS_COLORS
 		@see http://man7.org/linux/man-pages/man5/dir_colors.5.html
@@ -37,6 +48,7 @@ WSL:
 	COLOR -[(yes|all)|(no|none)|(tty)* - tty: apply to terminal not pipe.
 	EIGHTBIT [yes|no]
 	OPTIONS ... any valid ls command option '-a'
+</pre>
 
 	|      | TYPE           |      | COLORS         | LIGHT ver
 	| ---- | -------------- | ---- | ----------     | -----------
@@ -53,24 +65,23 @@ WSL:
 	| 9.   | Light_Color    | 10.  | BG Light_Color
 
 	0      | no | NORMAL  | Normal (nonefilename)Text       | NORMAL
+	-------|----|---------|---------------------------------|-------
 	0      | fi | FILE    | Regular File                    |
 	32 [G] | di | DIR     | Directory (+d)                  |
 	36 [C] | ln | LNK     | Symbolic Link (+l)              | SYMLNK   | LNK
 	-      | or | ORPHAN  | Link to Non-Existant File       | -        | default LINK
 	-      | mi | MISSING | Non-Existant File Linked To     | -        | default FILE
 	35 [P] | ex | EXEC    | Executable (+x)                 | 35
-
 	31 [R] | pi | FIFO    | Fifo Named-Pipe                 | PIPE
 	33 [O] | so | SOCK    | Socket
 	-      | do | DOOR    | Door
 	> > >  | bd | BLK     | Block Device *Special* File     | 44;37 [Grey:Blue BG]
 	> > >  | cd | CHR     | Character Device *Special* File | 44;37  [Grey:Blue BG]
-		
-	| su | SUID   | SETUID                | File with set-user-ID(+s) set
-	| sg | SGID   | SETGID                | File with set-group-ID(+s) set
-	| st | STICKY |                       | File with sticky attributeset(+t)
-	| ow | OWR    | OTHER_WRITABLE        | OW-Directory (o+w)
-	| tw | OWT    | STICKY_OTHER_WRITABLE | OWR with exec set (+t o+w)
+	- | su | SUID   | SETUID                | File with set-user-ID(+s) set
+	- | sg | SGID   | SETGID                | File with set-group-ID(+s) set
+	- | st | STICKY |                       | File with sticky attributeset(+t)
+	- | ow | OWR    | OTHER_WRITABLE        | OW-Directory (o+w)
+	- | tw | OWT    | STICKY_OTHER_WRITABLE | OWR with exec set (+t o+w)
 
 	no: NORMAL: -	Global default :: 00
 	fi:	FILE:	-	File :: 00

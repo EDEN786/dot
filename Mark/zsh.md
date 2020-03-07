@@ -1,15 +1,18 @@
 .rc refers to the user config for your shell, i.e bashrc zshrc
-#::Installs::#######################
+# Installs
+ 
 sudo apt install zsh vim git neofetch
 	//$chsh -s $(which zsh)
 	git-flow fonts-powerline
 	
-##::Fonts::################
+## Fonts
+ 
 	NERD
 	FONT-AWESOME
 	POWERLINE-FONTS
 	DEVICONS+GLYPHS
-###::Programming Tools::#### 
+ Programming Tools
+  
 	build-essential {C/++} openjdk-8-jdk
 	//{ghc {Haskel} sbcl{lisp} openjdk-8-jdk openjdk-11-jdk} //jdk includes jre
 	
@@ -20,7 +23,7 @@ sudo apt install zsh vim git neofetch
 > $aria2 	-(wget)-http/https/ftp/sftp/Tor download tool
 
 https://www.reddit.com/r/vim/comments/9xpb18/file_preview_with_fzf_rg_bat_and_devicons/
-#GITHUB PACKAGES
+# ITHUB PACKAGES
 	fzf -Fuzzy Finder ( \*\*<TAB> )
 		git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 		~/.fzf/install
@@ -32,7 +35,7 @@ https://www.reddit.com/r/vim/comments/9xpb18/file_preview_with_fzf_rg_bat_and_de
 	**vim-plug** -Vim plugin manager
 		https://github.com/junegunn/vim-plug
 //
-//https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-2-install-for-oh-my-zsh
+//https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions# ption-2-install-for-oh-my-zsh
 //git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 //< also get awesome-powerline fonts for best use>
 @see PwrLv10K
@@ -40,15 +43,17 @@ https://www.reddit.com/r/vim/comments/9xpb18/file_preview_with_fzf_rg_bat_and_de
 @see Prompt-Pure
 	autoload -U promptinit; promptinit; prompt pure
 
-#::ZSHRC::####################################################################
+# ZSHRC
+ 
 
-##Plugins::
+## lugins
+ 
 https://github.com/unixorn/awesome-zsh-plugins  {alias-tips} {zsh-autosuggestions}
 
 Plugin Managers {Antigen, Zplug ??}
 
 https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
-##::Oh-My-Zsh plugins
+## Oh-My-Zsh plugins
 	Git
 	Git-flow-avh
 	web-search
@@ -57,7 +62,7 @@ https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
 	common-aliases
 
 https://github.com/petervanderdoes/gitflow-avh
-###::Git Flow
+ Git Flow
 	$git flow
 			feature [base default delevop]	 alias g-f
 			release [base default develop]	 alias g-r
@@ -75,7 +80,8 @@ https://github.com/petervanderdoes/gitflow-avh
 			support	[base default production]  alias g-s
 					start <release> [<base>]
 	
-##::PiP-Install::##########################################################
+## PiP-Install
+ 
 sudo apt install python3-dev python3-pip python3-setuptools python-pygments
 						//python-dev python-pip
 > $sudo pip3 install the fuck
@@ -84,7 +90,7 @@ sudo apt install python3-dev python3-pip python3-setuptools python-pygments
 > $apt get software-properties-common    //adds PPA tools
 > $add-apt-repository ppa:neovim-ppa/stable
 > $apt install neovim
-###########################################################################
+
 to make commands/scripts accessable everywhere
 export PATH=$PATH:</path/to/file> in .rc
 or 
@@ -92,15 +98,17 @@ add it to /usr/local/bin
 	chmod 764
 	
 
-##::ALRC::##################################
+## ALRC
+ 
 "Loading Aliases from another File
 
-if [ -d <dir> ]; then		#IF [DIR Exists]  ~/CONFIG/
-	if [ -f <path> ]; then	#IF [File Exists] ~/CONFIG/.shared
-		. <path> 			#Load File
+```
+if [ -d <dir> ]; then		# F [DIR Exists]  ~/CONFIG/
+	if [ -f <path> ]; then	# F [File Exists] ~/CONFIG/.shared
+		. <path> 			# oad File
 	fi
 fi
-```
+
 cd ~
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
@@ -123,17 +131,16 @@ cs()
 alias cds='cs'
 ```
 
+## VIM
 
-
-
-
-##::VIM::CONFIG#####################
-
+ CONFIG
+```
 set nu //linenumbers
 set hlsearch //highlighsearch
 set lazyredraw //only refresh at the end of a macro
 "mappings
 nnoremap Q @@ "disable ^Q key <Ex>Mode
+```
 
 Speical Characters
 	C-K then two-letter combination

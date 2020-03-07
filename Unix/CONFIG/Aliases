@@ -1,0 +1,52 @@
+#!/bin/bash
+# define Editor, 'vim'
+cd $HOME # Navigate to Home, primarily for WSL
+EDITOR="vim"
+dotdir="$HOME/git/dot/"
+echo $dotdir
+[ -d ${dotdir}Unix/CONFIG/Scripts ] && export PATH=$PATH:${dotdir}Unix/CONFIG/Scripts && echo scripts loaded
+	
+if [ -f ~/.dir_colors ]; then
+	eval `dircolors ~/.dir_colors`
+	LS_COLORS=$LS_COLORS:'ow=1;4;93'; export LS_COLORS
+fi
+
+#alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
+
+alias bashrc="$EDITOR $HOME/.bashrc"
+alias zshconfig="$EDITOR $HOME/.zshrc"
+alias zshrc="$EDITOR $HOME/.zshrc"
+alias vimrc="$EDITOR $HOME/.vimrc"
+alias vrc="$EDITOR $HOME/.vimrc"
+#alias fvim="$EDITOR $(ls |fzf)"
+
+alias alrc="$EDITOR $HOME/.Aliases"
+alias alconfig="alrc"
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias grep='grep --color=always'
+alias G="| grep"
+alias L='| less'
+
+alias ls="ls --color=always"
+alias l1="ls -1"
+alias la="ls -A"
+alias lA="ls -lA"
+alias ll="ls -l"
+alias ls='ls -F'
+
+#alias ld='ldot'
+#alias l.='ld'
+#alias l.*='ls .*'
+
+alias aG='alias G'
+alias cd.='cd ..'
+alias c.='cd ..'
+
+cs(){
+	cd $@
+       	ls
+}
