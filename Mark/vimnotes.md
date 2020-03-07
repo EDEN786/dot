@@ -2,25 +2,26 @@
 https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
 # Plugins
 via Vundle | Vimplug
------------|---------
+---
+```
 tpope/vim-fugitive
 	/vim-surround
-vim-airline/vim-airline				// vim let g:airline_powerline_fonts = 1
+vim-airline/vim-airline	// vim let g:airline_powerline_fonts = 1
 				/ +themes
-godlygook/tabular					//[Needed for Markdown - must come before]
+godlygook/tabular		//[Needed for Markdown - must come before]
 plasticboy/vim-markdown
 w0rp/ale
 Plug[in] ryanoasis/vim-devicons		//[Always load last - needs Nerd font] - inside Vim set encoding=UTF-8
 mhinz/vim-signify
 [NerdTree, Vim-Surround, powerline, FzF, CtrlP, Denite, unite, vimfiller, flagship, vim-startify, vim-workspace, lightline.vim]
-
+```
 
 Use | Plugin | Alternative & Used together
 ----|--------|------------
-Distraction Free | goyo & limeline |
+Distraction Free | goyo | & limeline
 VC changes | signify | Git-Gutter
 Man/Docs | viewdoc |
-statusline |  | powerline | airline
+statusline |  powerline | airline
 FileExplorer | NerdTree |
 
 <pre>
@@ -48,8 +49,9 @@ python3 del powerline_setup
 set rtp+={repository_root}/powerline/bindings/vim
 ```
 ////////////////////////////////////////
-				VIM
+#### VIM
 ////////////////////////////////////////
+```
 ""notes"" : actions are triggerd by lowercase, Uppercase, _ALT_+letter and _CTRL_+leter
 if it is lowercase, just press the letter
 if it is uppercase, use _SHIFT_, _CapsLock_ will also work.
@@ -60,15 +62,15 @@ difference between word and WORD.
 	if a command has a lower case, and then a uppercase next to it. The upper case version is for WORDs
 		i.e _w_ _W_ , w is for word, W is for WORD.
 		after a command ¦ is the opposite command
-		
+```		
 	
 
-_wd_ word
-_WD_ WORD
-_Ln_ line
-_CUR_ - cursor
-_So#_ Start of 
-_Eo#_ End of 
+- _wd_ word
+- _WD_ WORD
+- _Ln_ line
+- _CUR_ - cursor
+- _So#_ Start of 
+- _Eo#_ End of 
 
 # Modes
 [N] Normal - _<ESC>_ to access. _<Ctrl-O>_ to access for one command.
@@ -84,8 +86,8 @@ _Eo#_ End of
 		- _V_ V-line.
 		- _<Ctrl-v>_ V-Block.
 	
-# Inputs
-"note, ":" signifies a command. commands are usually inputted in the [Normal] Mode.
+# Command
+"___:___" signifies a command. commands are usually inputted in the [Normal] Mode.
 
 ## Exit
 	Force Quit/Exit - __:q!__ or __ZC__
@@ -167,20 +169,20 @@ C-O - return from jump
 # Windows
 ## Split View
 vim -v
-__:split__ - horizontally ---
-__:vsplit__ - vertically |
+
+- __:split__ - horizontally ---
+- __:vsplit__ - vertically |
 
 ## Tabs
-__:tabe__ - tab edit : open file to edit
-__:tabo__ - tab open : open file
-
-__:tabn__ - Next Tab or _gt_
-__:tabp__ - Previous Tab _Gt_
+- __:tabe__ - tab edit : open file to edit
+- __:tabo__ - tab open : open file
+- __:tabn__ - Next Tab or _gt_
+- __:tabp__ - Previous Tab _Gt_
 
 # Extra
 ## Learning
 _K_ - looks up man page for word cursor is over.
-
+	
 ### Ex mode
 	Ex-Mode is backwords support for Ex commands
 	:Visual	Visual opens a file
@@ -190,6 +192,7 @@ _K_ - looks up man page for word cursor is over.
 :open/:o does not. - open uses pattern matching.
 
 #### look into
+<pre>
 let g:currentmode={
             \ 'n'      : 'NORMAL  ',
             \ 'v'      : 'VISUAL  ',
@@ -208,7 +211,7 @@ set statusline=
             \:%{&readonly\|\|!&modifiable?&modified?'%*':'%%':&modified?'**':'--'}
             \\ \ %{expand('%:~:.')!=#''?expand('%:~:.'):'[No\ Name]'}
             \%=\ %3p%%\ \ %l:\ %3c
-
+</pre>
 
 # Vim Free keys
 
