@@ -16,29 +16,31 @@ MakeDir () {
   fi
 }
 
-DD=$(dirname $0) # Script Directory
-CF="$HOME/.CONFIG" #CONFIG Directory
+#Script Path
+SP="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 BIN="$HOME/.local/bin"
 sBIN="$HOME/.local/sbin"
 
 MakeDir $CF
 echo Linking Aliases to "$CF"
-ln -s $DD/Aliases $CF
+if [ ! -f $HOME/.Aliases ];then ln -s $SP/Aliases $HOME/.Aliases; fi
 
 MakeDir $BIN
 MakeDir $sBIN
 echo Linking Scripts to \n\t "$BIN" \n\t "$sBIN"
-ln -s $DD/Scripts/bin $BIN
-ln -s $DD/Scripts/sbin $sBIN
+if [ ! -f $SP/Scripts/bin ];then ln -s $SP/Scripts/bin $BIN; fi
+if [ ! -f $SP/Scripts/sbin ];then ln -s $SP/Scripts/sbin $sBIN; fi
 
 echo Add local sbin to '~/.profile'
 Pr=$HOME/.profile
-echo "# set PATH so it includes user's private sbin if it exists" >> $Pr
-echo "if [ -d \"$HOME/.local/sbin\" ] ; then" >> $Pr
-echo "   PATH=\"$HOME/.local/bin:$PATH\"" >> $Pr
-echo "fi" >> $Pr
+if [ true ];then #diable for multiple testing so file doesn't get appended 
+	echo "# set PATH so it includes user's private sbin if it exists" >> $Pr
+	echo "if [ -d \"$HOME/.local/sbin\" ] ; then" >> $Pr
+	echo "   PATH=\"$HOME/.local/bin:$PATH\"" >> $Pr
+	echo "fi" >> $Pr
 
-echo "# set PATH so it includes user's private sbin if it exists" >> $Pr
-echo "if [ -d \"$HOME/sbin\" ] ; then" >> $Pr
-echo "   PATH=\"$HOME/bin:$PATH\"" >> $Pr
-echo "fi" >> $Pr
+	echo "# set PATH so it includes user's private sbin if it exists" >> $Pr
+	echo "if [ -d \"$HOME/sbin\" ] ; then" >> $Pr
+	echo "   PATH=\"$HOME/bin:$PATH\"" >> $Pr
+	echo "fi" >> $Pr
+fi
