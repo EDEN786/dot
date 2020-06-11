@@ -30,3 +30,15 @@ MakeDir $sBIN
 echo Linking Scripts to \n\t "$BIN" \n\t "$sBIN"
 ln -s $DD/Scripts/bin $BIN
 ln -s $DD/Scripts/sbin $sBIN
+
+echo Add local sbin to '~/.profile'
+Pr=$HOME/.profile
+echo "# set PATH so it includes user's private sbin if it exists" >> $Pr
+echo "if [ -d \"$HOME/.local/sbin\" ] ; then" >> $Pr
+echo "   PATH=\"$HOME/.local/bin:$PATH\"" >> $Pr
+echo "fi" >> $Pr
+
+echo "# set PATH so it includes user's private sbin if it exists" >> $Pr
+echo "if [ -d \"$HOME/sbin\" ] ; then" >> $Pr
+echo "   PATH=\"$HOME/bin:$PATH\"" >> $Pr
+echo "fi" >> $Pr
