@@ -51,3 +51,5 @@ cs(){
 	cd $@
        	ls
 }
+
+#ls(){ ls --colour=always; }
