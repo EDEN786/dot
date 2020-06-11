@@ -21,21 +21,23 @@ alias vrc="$EDITOR $HOME/.vimrc"
 
 alias alrc="$EDITOR $HOME/.Aliases"
 alias alconfig="alrc"
+alias dd="cd $dotdir"
 
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
 alias grep='grep --color=always'
-alias G="| grep"
+alias G='| grep'
 alias L='| less'
 
-alias ls="ls --color=always"
-alias l1="ls -1"
-alias la="ls -A"
-alias lA="ls -lA"
-alias ll="ls -l"
+alias ls='ls --color=always'
+alias l1='ls -1'
+alias la='ls -A'
+alias lA='ls -lA'
+alias ll='ls -la'
 alias ls='ls -F'
+alias l.='ls -d .* --color=auto'
 
 #alias ld='ldot'
 #alias l.='ld'
