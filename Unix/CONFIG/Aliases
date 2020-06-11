@@ -3,8 +3,7 @@
 cd $HOME # Navigate to Home, primarily for WSL
 EDITOR="vim"
 dotdir="$HOME/git/dot/"
-echo $dotdir
-[ -d ${dotdir}Unix/CONFIG/Scripts ] && export PATH=$PATH:${dotdir}Unix/CONFIG/Scripts && echo scripts loaded
+[ -d ${dotdir}Unix/CONFIG/Scripts ] && export PATH=$PATH:${dotdir}Unix/CONFIG/Scripts
 	
 if [ -f ~/.dir_colors ]; then
 	eval `dircolors ~/.dir_colors`
