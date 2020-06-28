@@ -118,4 +118,15 @@ OPTIONS ... any valid ls command option '-a'
 	
 ---
 
+reccommended to have a .dir_colors file defining system colours
+
+put the following into .bashrc
+```bash
+if [ -f ~/.dir_colors ]; then
+	eval `dircolors ~/.dir_colors`
+	LS_COLORS=$LS_COLORS:'ow=1;4;93'; export LS_COLORS
+fi
+```
+
+
 rdesktop -A
