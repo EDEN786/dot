@@ -1,18 +1,19 @@
-WSL:
 # Enable WSL
 	
 # Chocolatey
 
 <pre>
 (Admin_PowerSh) 
-	>$ Get-ExecutionPolicy; If (Restricted) run >$ Set-ExecutionPolicy Bypass -Scope Process -Force;
+    >$ Get-ExecutionPolicy; If (Restricted) run >$ Set-ExecutionPolicy Bypass -Scope Process -Force;
   >$ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-	NeoVim
-		choco install neovim     (launch with nvim)
+    NeoVim
+      choco install neovim     (launch with nvim)
 	NppPluginManager
-		notepadplusplus-nppPluginManager
-				https://github.com/notepad-plus-plus/notepad-plus-plus/issues/2287#issuecomment-256638098
+          notepadplusplus-nppPluginManager
+	 https://github.com/notepad-plus-plus/notepad-plus-plus/issues/2287#issuecomment-256638098
 </pre>					
+
+---
 
 # Termiinal
 
@@ -28,26 +29,38 @@ WSL:
 	(run though zsh & oh-my-zsh install)
 </pre>
 
-# GUIi
+---
+
+# GUI
 
 </pre>
 	export DISPLAY=:0.0
+	
 		[host]:<display>.[screen]
-		[local]:0.[0] // [optional]
-	sudo apt install xfce4
-	startxfce4
+		[local]:0.[0]
+	// [optional]
+		sudo apt install xfce4
+		startxfce4
 </pre>
+
+---
 
 # Folder Color fix
 
+## Inspiration
+	https://github.com/microsoft/vscode/issues/7556
+
+---
+
 <pre>
-	http://www.bigsoft.co.uk/blog/2008/04/11/configuring-ls_colors
-	LS_COLORS=$LS_COLORS:'ow=4;93'; export LS_COLORS
-		@see http://man7.org/linux/man-pages/man5/dir_colors.5.html
-	TERM - terminal to apply to.
-	COLOR -[(yes|all)|(no|none)|(tty)* - tty: apply to terminal not pipe.
-	EIGHTBIT [yes|no]
-	OPTIONS ... any valid ls command option '-a'
+http://www.bigsoft.co.uk/blog/2008/04/11/configuring-ls_colors
+LS_COLORS=$LS_COLORS:'ow=4;93'; export LS_COLORS
+	@see http://man7.org/linux/man-pages/man5/dir_colors.5.html
+
+TERM - terminal to apply to.
+COLOR -[(yes|all)|(no|none)|(tty)* - tty: apply to terminal not pipe.
+EIGHTBIT [yes|no]
+OPTIONS ... any valid ls command option '-a'
 </pre>
 
 	|      | TYPE           |      | COLORS         | LIGHT ver
@@ -103,7 +116,6 @@ WSL:
 	//can ignore
 	LEFTCODE RIGHTCODE ENDCODE/ 
 	
-
-????????????????????
+---
 
 rdesktop -A
