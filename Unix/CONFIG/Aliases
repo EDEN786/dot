@@ -22,6 +22,7 @@ alias vrc="$EDITOR $HOME/.vimrc"
 alias alrc="$EDITOR $HOME/.Aliases"
 alias alconfig="alrc"
 alias dd="cd $dotdir"
+alias BIN="cd $HOME/.local/bin"
 
 alias rm='rm -i'
 alias cp='cp -i'
