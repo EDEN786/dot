@@ -35,12 +35,12 @@ echo Add local sbin to '~/.profile'
 Pr=$HOME/.profile
 if [ true ];then #diable for multiple testing so file doesn't get appended 
 	echo "# set PATH so it includes user's private sbin if it exists" >> $Pr
-	echo "if [ -d \"$HOME/.local/sbin\" ] ; then" >> $Pr
-	echo "   PATH=\"$HOME/.local/bin:$PATH\"" >> $Pr
+	echo "if [ -d \"$HOME/sbin\" ] ; then" >> $Pr
+	echo "   PATH=\"$HOME/sbin:$PATH\"" >> $Pr
 	echo "fi" >> $Pr
 
 	echo "# set PATH so it includes user's private sbin if it exists" >> $Pr
-	echo "if [ -d \"$HOME/sbin\" ] ; then" >> $Pr
-	echo "   PATH=\"$HOME/bin:$PATH\"" >> $Pr
+	echo "if [ -d \"$HOME/.local/sbin\" ] ; then" >> $Pr
+	echo "   PATH=\"$HOME/.local/sbin:$PATH\"" >> $Pr
 	echo "fi" >> $Pr
 fi
